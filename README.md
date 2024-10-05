@@ -85,7 +85,7 @@ contract MyToken is ERC20, Ownable {
     event Burned(address  from, uint amount);
     event Transfered(address  from, address to, uint amount);
     
-    constructor(uint initialSupply) ERC20("MyToken", "MTK")Ownable(msg.sender){
+    constructor(uint initialSupply) ERC20("DOTNET", "DOT")Ownable(msg.sender){
         _mint(msg.sender,initialSupply);
     }
 
@@ -99,7 +99,7 @@ contract MyToken is ERC20, Ownable {
         emit Burned(msg.sender, amount);
     }
 
-    function transfer(address to, uint256 amount) public override returns (bool) {
+    function transfertoken(address to, uint256 amount) public  returns (bool) {
         _transfer(msg.sender, to, amount);
         emit Transfered(msg.sender, to, amount);
         return true;
